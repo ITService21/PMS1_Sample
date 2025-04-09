@@ -30,8 +30,11 @@ use App\Http\Controllers\Admin\SupplierController;
 |
 */
 Route::middleware(['auth'])->group(function(){
+    Route::get('/', function () {
+        return 'Laravel is working inside /pms1!';
+    });
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
-    Route::get('',[DashboardController::class,'Index']);
+    // Route::get('',[DashboardController::class,'Index']);
     Route::get('notification',[NotificationController::class,'markAsRead'])->name('mark-as-read');
     Route::get('notification-read',[NotificationController::class,'read'])->name('read');
     Route::get('profile',[UserController::class,'profile'])->name('profile');
